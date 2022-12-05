@@ -1,0 +1,102 @@
+<div class="login-register">
+  <div class="login-register-panel">
+    <div class="p-grid">
+      <div class="p-col-12 p-p-5">
+        <h3>Welcome!</h3>
+        <h2>Signup Page</h2>
+        <form [formGroup]="signupFormGroup">
+          <div class="p-grid">
+            <div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                  <input type="text" formControlName="name" pInputText placeholder="Name" />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+                  <input type="email" formControlName="email" pInputText placeholder="Email" />
+                </div>
+                <small *ngIf="signupForm.email.invalid && isSubmitted" class="p-error"
+                  ><span *ngIf="signupForm.email.errors.required">email is required</span>
+                  <span *ngIf="signupForm.email.errors.email">email is invalid</span></small
+                >
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                  <input
+                    type="password"
+                    formControlName="password"
+                    pInputText
+                    placeholder="Password"
+                  />
+                </div>
+                <small *ngIf="signupForm.password.invalid && isSubmitted" class="p-error"
+                  >Password is required
+                </small>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+                  <input type="number" formControlName="phone" pInputText placeholder="Phone" />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
+                  <input type="text" formControlName="street" pInputText placeholder="Street" />
+                </div>
+              </div>
+              <div class="p-col-12">
+                <p-button label="Submit" styleClass="full-btn" (onClick)="onSubmit()"></p-button>
+              </div>
+              <div class="p-col-12" *ngIf="isSubmitted && authError">
+                <small class="p-error">{{ authMessage }}</small>
+              </div>
+            </div>
+            <div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
+                  <input
+                    type="text"
+                    formControlName="apartment"
+                    pInputText
+                    placeholder="Apartment"
+                  />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-shield"></i></span>
+                  <input type="text" formControlName="zip" pInputText placeholder="Zip code" />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
+                  <input type="text" formControlName="city" pInputText placeholder="City" />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-right: 70px">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-map"></i></span>
+                  <input type="text" formControlName="country" pInputText placeholder="Country" />
+                </div>
+              </div>
+              <div class="p-col-12" style="margin-top: 50px">
+                <p-button
+                  label="Back to Login"
+                  styleClass="full-btn"
+                  (onClick)="onClick()"
+                ></p-button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
